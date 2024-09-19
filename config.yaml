@@ -1,0 +1,16 @@
+ports : #port where the service will be served
+  gin : "1338"
+database_entity :
+  mysqldb:
+    database_url: "%s:%s@tcp(%s:%s)/%s"  #uri to start our database connection
+    database_type: "mysql" #mysql,postgres
+    database_user: "root"
+    database_password: "root"
+    database_host: "127.0.0.1:3036"
+    database_host_without_port: "127.0.0.1"
+    database_port: "3306"
+    database: "mirae"
+    database_additional:
+      database_parse_time: "true"
+schedular:
+  job_exec_time: "@every 24h"
